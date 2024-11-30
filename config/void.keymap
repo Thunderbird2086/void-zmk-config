@@ -1,0 +1,87 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+&sk {
+  /delete-property/ ignore-modifiers;
+};
+
+nice_view_spi: &spi0 {
+    cs-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+};
+
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+            base {
+              display-name = "Base";
+              bindings = <
+                // col 0     // col 1      // col 2      // col 3     // col 4      // col 5   // col 6         // col 7      // col 8      // col 9
+                &kp Q        &kp W         &kp F         &kp P        &kp B         &kp J      &kp L            &kp U         &kp Y         &kp SQT
+                &hm LALT A   &hm LSHFT R   &hm LCTRL S   &hm LCMD T   &kp G         &kp M      &hm RCMD N       &hm RCTRL E   &hm RSHFT I   &hm RALT O 
+                &kp Z        &kp X         &kp C         &kp D        &kp V         &kp K      &kp H            &kp COMMA     &kp DOT       &kp FSLH
+                                           &lt 3 ESC    &lt 2 TAB   &lt 1 SPACE  &lt 1 RET &lt 2 BACKSPACE &lt 4 DEL
+              >;
+            };
+
+            code_layer {
+              display-name = "Code";
+              bindings = <
+                &kp N1           &kp N2     &kp N3     &kp N4    &kp N5       &kp N6  &kp N7    &kp N8            &kp N9             &kp N0
+                &hm LALT GRAVE   &kp LSHFT  &kp LCTRL  &kp LCMD  &none        &none   &kp RCMD  &hm RCTRL SEMI    &hm RSHFT MINUS    &hm RALT EQUAL 
+                &none            &none      &none      &none     &kp CAPS     &none   &none     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+                                            &trans     &trans    &trans       &trans  &trans    &trans
+              >;
+            };
+
+            func_layer {
+              display-name = "Func";
+              bindings = <
+                &kp F1    &kp F2     &kp F3     &kp F4          &kp F5           &kp F6   &kp F7          &kp F8     &kp F9     &kp F10
+                &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI        &kp F12          &kp F11  &kp RGUI        &kp RCTRL  &kp RSHFT  &kp RALT
+                &none     &none      &none      &none           &none            &none    &none           &none      &none      &none
+                                     &trans     &hm GLOBE TAB   &trans           &trans   &hm GLOBE TAB   &trans
+              >;
+            };
+
+            nav_layer {
+              display-name = "Nav";
+              bindings = <
+                // col 0  // col 1   // col 2   // col 3  // col 4    // col 5  // col 6  // col 7  // col 8   // col 9
+                &none     &none      &none      &none     &none       &none     &none     &none     &none      &none
+                &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI  &none       &kp INS   &kp LEFT  &kp UP    &kp RIGHT  &kp PAGE_UP
+                &none     &none      &none      &none     &none       &none     &kp HOME  &kp DOWN  &kp END    &kp PAGE_DOWN
+                                     &trans     &trans    &trans      &trans    &trans    &trans
+              >;
+            };
+
+            media_layer {
+              display-name = "Media";
+              bindings = <
+                // col 0       // col 1          // col 2    // col 3      // col 4    // col 5  // col 6  // col 7         // col 8    // col 9
+                &kp C_POWER    &kp C_SLEEP_MODE  &none       &none         &none       &none     &none     &kp C_AL_COFFEE  &none       &none
+                &kp C_BRI_INC  &kp C_NEXT        &kp C_PP    &kp C_VOL_UP  &none       &none     &none     &none            &none       &none
+                &kp C_BRI_DEC  &kp C_PREVIOUS    &kp C_MUTE  &kp C_VOL_DN  &none       &none     &none     &none            &none       &none
+                                                 &lt 5 ESC   &trans        &trans      &trans    &trans    &trans
+              >;
+            };
+
+            config_layer {
+              display-name = "Config";
+              bindings = <
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &none       &none        &none       &none       &bt BT_CLR
+                &sys_reset   &none        &none        &none        &none             &none       &bt BT_NXT   &none       &none       &sys_reset
+                &bootloader  &none        &none        &none        &none             &none       &bt BT_PRV   &none       &none       &bootloader
+                                          &none        &trans       &trans            &trans      &trans       &trans
+              >;
+            };
+        };
+};
