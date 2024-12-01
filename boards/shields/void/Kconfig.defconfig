@@ -6,13 +6,13 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config ZMK_SPLIT
-    default y
-
-endif   # LEFT
+endif   # SHIELD_VOID_LEFT
 
 
 if SHIELD_VOID
+
+config ZMK_SPLIT
+    default y
 
 if ZMK_DISPLAY
 
@@ -41,4 +41,4 @@ endchoice
 
 endif # LVGL
 
-endif # SHIELD VOID
+endif # SHIELD_VOID
