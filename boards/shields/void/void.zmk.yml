@@ -1,0 +1,13 @@
+file_format: "1"
+id: void
+name: VOID
+type: shield
+url: https://github.com/Thunderbird2086/VOID
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - void_left
+  - void_right

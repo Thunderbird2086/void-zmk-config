@@ -1,0 +1,13 @@
+# Copyright (c) 2023 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_VOID
+    bool
+
+config SHIELD_VOID_LEFT
+    def_bool $(shields_list_contains,void_left)
+    select SHIELD_VOID
+
+config SHIELD_VOID_RIGHT
+    def_bool $(shields_list_contains,void_right)
+    select SHIELD_VOID
