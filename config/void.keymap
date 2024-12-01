@@ -18,6 +18,17 @@ nice_view_spi: &spi0 {
 
 
 / {
+        behaviors {
+          hm: homewrow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
+          };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
