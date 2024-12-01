@@ -1,8 +1,15 @@
+if SHIELD_VOID_LEFT
+
 config ZMK_KEYBOARD_NAME
     default "VOID"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
+
+endif   # SHIELD_VOID_LEFT
+
+
+if SHIELD_VOID
 
 config ZMK_SPLIT
     default y
@@ -33,3 +40,5 @@ choice LV_COLOR_DEPTH
 endchoice
 
 endif # LVGL
+
+endif # SHIELD_VOID
