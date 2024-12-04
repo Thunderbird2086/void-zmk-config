@@ -8,6 +8,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
+
 &sk {
   /delete-property/ ignore-modifiers;
 };
@@ -23,8 +27,9 @@ nice_view_spi: &spi0 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
+            tapping-term-ms = <HA_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
             bindings = <&kp>, <&kp>;
           };
         };
