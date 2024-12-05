@@ -26,12 +26,17 @@ nice_view_spi: &spi0 {
           hm: homewrow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "tap-unless-inyerrupted";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <0>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             bindings = <&kp>, <&kp>;
           };
+        };
+
+        &lt {
+            flavor = "tap-unless-inyerrupted";
+            tapping-term-ms = <200>;
         };
 
         keymap {
