@@ -10,6 +10,7 @@
 
 #define HM_TAPPING_TERM 300
 #define HM_TAPPING_TERM_FAST 200
+#define QUICK_TAPPING_TERM  175
 #define HM_PRIOR_IDLE 150
 
 &sk {
@@ -18,6 +19,7 @@
 
 &lt {
     flavor = "tap-unless-interrupted";
+    quick-tap-ms = <QUICK_TAPPING_TERM>;
     tapping-term-ms = <200>;
 };
 
@@ -33,7 +35,7 @@ nice_view_spi: &spi0 {
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <QUICK_TAPPING_TERM>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             bindings = <&kp>, <&kp>;
           };
