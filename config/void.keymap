@@ -32,11 +32,11 @@ nice_view_spi: &spi0 {
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             bindings = <&kp>, <&kp>;
           };
-        };
 
-        &lt {
-            flavor = "tap-unless-inyerrupted";
-            tapping-term-ms = <200>;
+          &lt {
+              flavor = "tap-unless-interrupted";
+              tapping-term-ms = <200>;
+          };
         };
 
         keymap {
