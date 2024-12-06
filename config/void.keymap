@@ -8,19 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define HM_TAPPING_TERM 300
-#define TAPPING_TERM_FAST 200
-#define QUICK_TAPPING_TERM  175
-#define HM_PRIOR_IDLE 150
+#include "includes/behaviours_homerow_mods.dtsi"
 
-&sk {
-  /delete-property/ ignore-modifiers;
-};
-
-&lt {
-    flavor = "tap-unless-interrupted";
-    tapping-term-ms = <TAPPING_TERM_FAST>;
-};
 
 nice_view_spi: &spi0 {
     cs-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
@@ -28,29 +17,17 @@ nice_view_spi: &spi0 {
 
 
 / {
-        behaviors {
-          hm: homewrow_m
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM_FAST>;
-            quick-tap-ms = <QUICK_TAPPING_TERM>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            bindings = <&kp>, <&kp>;
-          };
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
             base {
               display-name = "Base";
               bindings = <
-                // col 0     // col 1      // col 2      // col 3     // col 4      // col 5   // col 6         // col 7      // col 8      // col 9
-                &kp Q        &kp W         &kp F         &kp P        &kp B         &kp J      &kp L            &kp U         &kp Y         &kp SQT
-                &hm LALT A   &hm LSHFT R   &hm LCTRL S   &hm LCMD T   &kp G         &kp M      &hm RCMD N       &hm RCTRL E   &hm RSHFT I   &hm RALT O 
-                &kp Z        &kp X         &kp C         &kp D        &kp V         &kp K      &kp H            &kp COMMA     &kp DOT       &kp FSLH
-                                           &lt 3 ESC    &lt 2 TAB   &lt 1 SPACE  &lt 1 RET &lt 2 BACKSPACE &lt 4 DEL
+                // col 0       // col 1              // col 2        // col 3       // col 4      // col 5   // col 6         // col 7        // col 8              // col 9
+                &kp Q          &kp W                 &kp F           &kp P          &kp B         &kp J      &kp L            &kp U           &kp Y                 &kp SQT
+                &hm_l LALT A   &hm_shift_l LSHFT R   &hm_l LCTRL S   &hm_l LCMD T   &kp G         &kp M      &hm_r RCMD N     &hm_r RCTRL E   &hm_shift_r RSHFT I   &hm_r RALT O 
+                &kp Z          &kp X                 &kp C           &kp D          &kp V         &kp K      &kp H            &kp COMMA       &kp DOT               &kp FSLH
+                                                     &lt 3 ESC       &lt 2 TAB      &lt 1 SPACE   &lt 1 RET  &lt 2 BACKSPACE  &lt 4 DEL
               >;
             };
 
@@ -97,7 +74,7 @@ nice_view_spi: &spi0 {
             };
 
             config_layer {
-              display-name = "Config";
+              display-name = "BLE";
               bindings = <
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &none       &none        &none       &none       &bt BT_CLR
                 &sys_reset   &none        &none        &none        &none             &none       &bt BT_NXT   &none       &none       &sys_reset
