@@ -16,6 +16,11 @@
   /delete-property/ ignore-modifiers;
 };
 
+&lt {
+    flavor = "tap-unless-interrupted";
+    tapping-term-ms = <200>;
+};
+
 nice_view_spi: &spi0 {
     cs-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
 };
@@ -31,11 +36,6 @@ nice_view_spi: &spi0 {
             quick-tap-ms = <0>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             bindings = <&kp>, <&kp>;
-          };
-
-          &lt {
-              flavor = "tap-unless-interrupted";
-              tapping-term-ms = <200>;
           };
         };
 
