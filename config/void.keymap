@@ -26,8 +26,7 @@
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    require-prior-idle-ms = <175>;
+    quick-tap-ms = <175>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
@@ -36,30 +35,23 @@ ZMK_HOLD_TAP(hml,
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    require-prior-idle-ms = <175>;
+    quick-tap-ms = <175>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
 )
 
+ZMK_HOLD_TAP(ltwr,
+   label = "LAYER_TAP_WITH_REPEAT";
+   flavor = "tap-preferred";
+   tapping-term-ms = <200>;
+   quick-tap-ms = <175>;
+   bindings = <&mo>, <&kp>;
+)
+
 /* Custom behaviors */
 
 ZMK_CONDITIONAL_LAYER(ble, NAV MEDIA, BLE)
-
-/ {
-    behaviors {
-        ltwr: layer_tap_with_repeat {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_WITH_REPEAT";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>; // Adjust tapping term as needed
-            quick-tap-ms = <150>;    // Enable quick tap for key repeat
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>; // Hold for layer, tap for key
-        };
-    };
-};
 
 nice_view_spi: &spi0 {
     cs-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
