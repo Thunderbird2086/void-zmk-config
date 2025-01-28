@@ -43,23 +43,18 @@ ZMK_HOLD_TAP(hmr,
     bindings = <&kp>, <&kp>;
 )
 
+ZMK_HOLD_TAP(ltwr,
+   label = "LAYER_TAP_WITH_REPEAT";
+   flavor = "tap-preferred";
+   #binding-cells = <2>;
+   tapping-term-ms = <200>; // Adjust tapping term as needed
+   quick-tap-ms = <150>;    // Enable quick tap for key repeat
+   bindings = <&mo>, <&kp>; // Hold for layer, tap for key
+)
+
 /* Custom behaviors */
 
 ZMK_CONDITIONAL_LAYER(ble, NAV MEDIA, BLE)
-
-/ {
-    behaviors {
-        ltwr: layer_tap_with_repeat {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_WITH_REPEAT";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>; // Adjust tapping term as needed
-            quick-tap-ms = <150>;    // Enable quick tap for key repeat
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>; // Hold for layer, tap for key
-        };
-    };
-};
 
 nice_view_spi: &spi0 {
     cs-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
