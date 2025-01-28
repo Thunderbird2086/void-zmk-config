@@ -26,8 +26,7 @@
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    require-prior-idle-ms = <175>;
+    quick-tap-ms = <175>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
@@ -36,8 +35,7 @@ ZMK_HOLD_TAP(hml,
 ZMK_HOLD_TAP(hmr,
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    require-prior-idle-ms = <175>;
+    quick-tap-ms = <175>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
@@ -46,10 +44,9 @@ ZMK_HOLD_TAP(hmr,
 ZMK_HOLD_TAP(ltwr,
    label = "LAYER_TAP_WITH_REPEAT";
    flavor = "tap-preferred";
-   #binding-cells = <2>;
-   tapping-term-ms = <200>; // Adjust tapping term as needed
-   quick-tap-ms = <150>;    // Enable quick tap for key repeat
-   bindings = <&mo>, <&kp>; // Hold for layer, tap for key
+   tapping-term-ms = <200>;
+   quick-tap-ms = <175>;
+   bindings = <&mo>, <&kp>;
 )
 
 /* Custom behaviors */
