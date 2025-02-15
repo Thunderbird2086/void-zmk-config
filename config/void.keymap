@@ -50,17 +50,6 @@ ZMK_HOLD_TAP(ltwr,
    bindings = <&mo>, <&kp>;
 )
 
-/ {
-    behaviors {
-        tog_on: toggle_layer_on_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer On";
-            toggle-mode = "on";
-        };
-    };
-};
-
 /* Custom behaviors */
 
 ZMK_CONDITIONAL_LAYER(ble, NAV MEDIA, BLE)
@@ -130,7 +119,7 @@ nice_view_spi: &spi0 {
             config_layer {
               display-name = "BLE";
               bindings = <
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &tog_on BASE  &tog_on QWERTY  &none       &none       &bt BT_CLR
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &to BASE      &to QWERTY   &none       &none       &bt BT_CLR
                 &sys_reset   &none        &none        &none        &none             &none         &bt BT_NXT   &none       &none       &sys_reset
                 &bootloader  &none        &none        &none        &none             &none         &bt BT_PRV   &none       &none       &bootloader
                                           &none        &trans       &trans            &trans        &trans       &trans
