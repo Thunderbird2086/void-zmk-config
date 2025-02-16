@@ -66,11 +66,11 @@ nice_view_spi: &spi0 {
             base {
               display-name = "Base";
               bindings = <
-                // col 0       // col 1      // col 2        // col 3       // col 4      // col 5     // col 6           // col 7        // col 8              // col 9
-                &kp Q          &kp W         &kp F           &kp P          &kp B         &kp J        &kp L              &kp U           &kp Y                 &kp SQT
-                &hml  LALT A   &hml LSHFT R  &hml  LCTRL S   &hml  LCMD T   &kp G         &kp M        &hmr  RCMD N       &hmr  RCTRL E   &hmr RSHFT I   &hmr  RALT O 
-                &kp Z          &kp X         &kp C           &kp D          &kp V         &kp K        &kp H              &kp COMMA       &kp DOT               &kp FSLH
-                                             &ltwr 3 ESC     &ltwr 2 TAB    &ltwr 1 SPACE &ltwr 1 RET  &ltwr 2 BACKSPACE  &ltwr 4 DEL
+                // col 0       // col 1      // col 2        // col 3       // col 4         // col 5       // col 6             // col 7        // col 8              // col 9
+                &kp Q          &kp W         &kp F           &kp P          &kp B            &kp J          &kp L                &kp U           &kp Y                 &kp SQT
+                &hml  LALT A   &hml LSHFT R  &hml  LCTRL S   &hml  LCMD T   &kp G            &kp M          &hmr  RCMD N         &hmr  RCTRL E   &hmr RSHFT I   &hmr  RALT O 
+                &kp Z          &kp X         &kp C           &kp D          &kp V            &kp K          &kp H                &kp COMMA       &kp DOT               &kp FSLH
+                                             &ltwr NAV ESC   &ltwr FUNC TAB &ltwr CODE SPACE &ltwr CODE RET &ltwr FUNC BACKSPACE &ltwr MEDIA DEL
               >;
             };
 
@@ -81,7 +81,7 @@ nice_view_spi: &spi0 {
                 &kp Q          &kp W         &kp E           &kp R          &kp T         &kp Y        &kp U              &kp I           &kp O                 &kp P
                 &hml  LALT A   &hml LSHFT S  &hml  LCTRL D   &hml  LCMD F   &kp G         &kp H        &hmr  RCMD J       &hmr  RCTRL K   &hmr RSHFT L   &hmr  RALT SEMI
                 &kp Z          &kp X         &kp C           &kp V          &kp B         &kp N        &kp M              &kp COMMA       &kp DOT               &kp FSLH
-                                             &ltwr 3 ESC     &ltwr 2 TAB    &ltwr 1 SPACE &ltwr 1 RET  &ltwr 2 BACKSPACE  &ltwr 4 DEL
+                                             &ltwr NAV ESC   &ltwr FUNC TAB &ltwr CODE SPACE &ltwr CODE RET &ltwr FUNC BACKSPACE &ltwr MEDIA DEL
               >;
             };
 
