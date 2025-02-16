@@ -77,10 +77,10 @@ nice_view_spi: &spi0 {
             qwerty {
               display-name = "QWERTY";
               bindings = <
-                // col 0       // col 1      // col 2        // col 3       // col 4      // col 5     // col 6           // col 7        // col 8              // col 9
-                &kp Q          &kp W         &kp E           &kp R          &kp T         &kp Y        &kp U              &kp I           &kp O                 &kp P
-                &hml  LALT A   &hml LSHFT S  &hml  LCTRL D   &hml  LCMD F   &kp G         &kp H        &hmr  RCMD J       &hmr  RCTRL K   &hmr RSHFT L   &hmr  RALT SEMI
-                &kp Z          &kp X         &kp C           &kp V          &kp B         &kp N        &kp M              &kp COMMA       &kp DOT               &kp FSLH
+                // col 0       // col 1      // col 2        // col 3       // col 4         // col 5       // col 6             // col 7        // col 8              // col 9
+                &kp Q          &kp W         &kp E           &kp R          &kp T            &kp Y          &kp U                &kp I           &kp O                 &kp P
+                &hml  LALT A   &hml LSHFT S  &hml  LCTRL D   &hml  LCMD F   &kp G            &kp H          &hmr  RCMD J         &hmr  RCTRL K   &hmr RSHFT L   &hmr  RALT SEMI
+                &kp Z          &kp X         &kp C           &kp V          &kp B            &kp N          &kp M                &kp COMMA       &kp DOT               &kp FSLH
                                              &ltwr NAV ESC   &ltwr FUNC TAB &ltwr CODE SPACE &ltwr CODE RET &ltwr FUNC BACKSPACE &ltwr MEDIA DEL
               >;
             };
@@ -89,7 +89,7 @@ nice_view_spi: &spi0 {
               display-name = "Code";
               bindings = <
                 &kp N1           &kp N2     &kp N3     &kp N4    &kp N5       &kp N6  &kp N7    &kp N8            &kp N9             &kp N0
-                &hml LALT GRAVE   &kp LSHFT  &kp LCTRL  &kp LCMD  &none        &none   &kp RCMD  &hmr RCTRL SEMI    &hmr RSHFT MINUS    &hmr RALT EQUAL 
+                &hml LALT GRAVE  &kp LSHFT  &kp LCTRL  &kp LCMD  &none        &none   &kp RCMD  &hmr RCTRL SEMI   &hmr RSHFT MINUS   &hmr RALT EQUAL 
                 &none            &none      &none      &none     &kp CAPS     &none   &none     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
                                             &trans     &trans    &trans       &trans  &trans    &trans
               >;
@@ -98,9 +98,9 @@ nice_view_spi: &spi0 {
             func_layer {
               display-name = "Func";
               bindings = <
-                &kp F1    &kp F2     &kp F3     &kp F4          &kp F5           &kp F6   &kp F7          &kp F8     &kp F9     &kp F10
-                &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI        &kp F12          &kp F11  &kp RGUI        &kp RCTRL  &kp RSHFT  &kp RALT
-                &none     &none      &none      &none           &none            &none    &none           &none      &none      &none
+                &kp F1    &kp F2     &kp F3     &kp F4           &kp F5           &kp F6   &kp F7           &kp F8     &kp F9     &kp F10
+                &kp LALT  &kp LSHFT  &kp LCTRL  &kp LGUI         &kp F12          &kp F11  &kp RGUI         &kp RCTRL  &kp RSHFT  &kp RALT
+                &none     &none      &none      &none            &kp CAPS         &none    &none            &none      &none      &none
                                      &trans     &hml GLOBE TAB   &trans           &trans   &hmr GLOBE TAB   &trans
               >;
             };
