@@ -30,5 +30,5 @@ The option(⌥), shift(⇧), control(⌃) and command(⌘) keys are assigned to 
   ![media](https://imgur.com/9zO87jA.png)
 
 - BLE: BLE keys<br>
-  ![ble](https://imgur.com/on9jVvN.png)
+  ![ble](https://imgur.com/WYfkeuW.png)
 
